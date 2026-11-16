@@ -1,0 +1,51 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "snaptext"
+dynamic = ["version"]
+description = "Select any region of your screen and copy its text to the clipboard."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+authors = [{ name = "Saad Mohamad" }]
+keywords = ["ocr", "screenshot", "clipboard", "tesseract", "windows"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Win32 (MS Windows)",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "mss>=9.0",
+    "Pillow>=11.0",
+    "pyperclip>=1.9",
+    "pystray>=0.19",
+    "pytesseract>=0.3.13",
+]
+
+[project.urls]
+Homepage = "https://github.com/snasereddin2009-hue/snaptext"
+Issues = "https://github.com/snasereddin2009-hue/snaptext/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+build = ["pyinstaller>=6.16"]
+
+[tool.hatch.version]
+path = "src/snaptext/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/snaptext"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
