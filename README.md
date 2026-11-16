@@ -46,7 +46,16 @@ Or download the installer from the
 SnapText finds Tesseract on `PATH` or in its default install folder. Extra
 languages can be selected in the installer.
 
-### 2. Install SnapText
+### 2. Download SnapText
+
+Download `SnapText.exe` from the
+[latest release](https://github.com/snasereddin2009-hue/snaptext/releases/latest)
+and run it. You don't need Python. It works on Windows 10 or 11.
+
+The exe isn't code-signed, so Windows SmartScreen may warn you the first time.
+Click **More info → Run anyway**.
+
+### Or install from source
 
 Requires Windows 10 or 11 and Python 3.11 or newer.
 
@@ -59,6 +68,8 @@ python -m pip install -e .
 ```
 
 ## Usage
+
+Run `SnapText.exe`, or from source:
 
 ```powershell
 python -m snaptext
@@ -73,9 +84,9 @@ SnapText starts in the system tray.
 Right-click the tray icon for **Capture**, **Open Config** and **Quit**.
 Use `pythonw -m snaptext` to run without a console window.
 
-### Standalone executable
+### Building the executable
 
-Build a single `SnapText.exe` that runs without Python (Tesseract is still required):
+To build `SnapText.exe` yourself instead of downloading it (Tesseract is still required):
 
 ```powershell
 python -m pip install -e ".[build]"
